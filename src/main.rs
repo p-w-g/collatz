@@ -1,5 +1,7 @@
 use std::io;
 
+mod collatz;
+use collatz::collatz;
 fn main() {
     let mut starting_number = String::new();
 
@@ -16,15 +18,4 @@ fn main() {
     let steps_taken = collatz(starting_number);
 
     println!("it took {steps_taken} to reach 1")
-}
-
-fn collatz(input: i128) -> i32 {
-    if input == 1 {
-        return 0;
-    };
-    if input % 2 == 0 {
-        return collatz(input / 2);
-    }
-
-    return collatz(3 * input + 1);
 }
