@@ -1,7 +1,7 @@
 use std::io;
 
 mod collatz;
-use collatz::collatz;
+
 fn main() {
     let mut starting_number = String::new();
 
@@ -15,7 +15,7 @@ fn main() {
         .parse()
         .expect("Please type a number!");
 
-    let steps_taken = collatz(starting_number);
+    let steps_taken = collatz::collatz(starting_number);
 
     println!("it took {steps_taken} to reach 1")
 }
